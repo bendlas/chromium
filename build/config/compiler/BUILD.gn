@@ -635,8 +635,6 @@ config("compiler") {
       (current_toolchain == default_toolchain ||
        (is_android && defined(android_secondary_abi_toolchain) &&
         current_toolchain == android_secondary_abi_toolchain))) {
-    assert(use_lld || target_os == "chromeos",
-           "gold plugin only supported with ChromeOS")
 
     cflags += [ "-flto=thin" ]
 
